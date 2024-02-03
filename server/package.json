@@ -1,0 +1,21 @@
+{
+  "name": "react-chat-server",
+  "version": "1.0.0",
+  "description": "Chat Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --config nodemon.json src/app.ts"
+  },
+  "author": "Nafis Ali",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/config": "^3.3.3",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.16",
+    "@types/pino": "^7.0.5",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
