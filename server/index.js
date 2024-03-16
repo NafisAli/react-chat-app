@@ -13,6 +13,11 @@ app.use(cors());
 
 socket.on("connection", (socket) => {
   console.log(`+: ${socket.id} user just connected!`);
+
+  socket.on("message", (data) => {
+    console.log(data);
+  });
+
   socket.on("disconnect", () => {
     console.log(`-: A user disconnected`);
   });
