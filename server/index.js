@@ -11,16 +11,29 @@ const io = new Server(http, { cors: { origin: "http://localhost:3000" } });
 
 app.use(cors());
 
+let users = [];
+
 io.on("connection", (socket) => {
   console.log(`+: ${socket.id} user just connected!`);
 
   socket.on("message", (data) => {
     console.log(data);
+
     io.emit("messageResponse", data);
+  });
+
+  socket.on("newUser", (data) => {
+    users.push(data);
+
+    io.emit("newUserResponse", users);
   });
 
   socket.on("disconnect", () => {
     console.log(`-: A user disconnected`);
+
+    users = users.filter((user) => user.socketID !== socket.id);
+    io.emit("newUserResponse", users);
+
     socket.disconnect();
   });
 });
