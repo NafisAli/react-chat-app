@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import ChatBar from "./ChatBar";
 import ChatBody from "./ChatBody";
 import ChatFooter from "./ChatFooter";
@@ -6,15 +7,15 @@ import ChatFooter from "./ChatFooter";
 const ChatPage = ({ socket }) => {
   const [ messages, setMessages ] = useState([]);
 
-  useEffect(() => {
-    socket.on("messageResponse", (data) => setMessages([...messages, data]))
+  useEffect(()=> {
+    socket.on("messageResponse", data => setMessages([...messages, data]));
   }, [socket, messages]);
 
   return (
     <div className="chat">
-      <ChatBar />
+      <ChatBar socket={socket} />
       <div className="chat-main">
-        <ChatBody />
+        <ChatBody messages={messages} />
         <ChatFooter socket={socket} />
       </div>
     </div>
