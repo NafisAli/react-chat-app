@@ -1,9 +1,16 @@
 import React from "react";
+import ChatBar from "./ChatBar";
+import ChatBody from "./ChatBody";
+import ChatFooter from "./ChatFooter";
 
 const ChatPage = ({ socket }) => {
   return (
     <div className="chat">
-
+      <ChatBar />
+      <div className="chat-main">
+        <ChatBody />
+        <ChatFooter socket={socket} />
+      </div>
     </div>
   );
 };
