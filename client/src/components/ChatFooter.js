@@ -23,5 +23,7 @@ const ChatFooter = () => {
         <button className="send-btn">Send</button>
       </form>
     </div>
-  )
-}
+  );
+};
+
+export default ChatFooter;
