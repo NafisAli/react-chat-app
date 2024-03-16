@@ -27,7 +27,7 @@ const Home = () => {
         onChange={(event) => setUserName(event.target.value)}
       />
     </form>
-  )
-}
+  );
+};
 
 export default Home;
