@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Home = ({ socket }) => {
+const Home = () => {
   const navigate = useNavigate();
   const [ userName, setUserName ] = useState("");
 
@@ -26,6 +26,7 @@ const Home = ({ socket }) => {
         value={userName}
         onChange={(event) => setUserName(event.target.value)}
       />
+      <button className='home-cta'>SIGN IN</button>
     </form>
   );
 };
