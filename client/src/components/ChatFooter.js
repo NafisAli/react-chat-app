@@ -12,10 +12,10 @@ const ChatFooter = ({ socket }) => {
         name: localStorage.getItem("userName"),
         id: `${socket.id}${Math.random()}`,
         socketID: socket.id,
-      })
+      });
     }
 
-    setMessage("");
+    setMessage("")
   };
 
   return (
