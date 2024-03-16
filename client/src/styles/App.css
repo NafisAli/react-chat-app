@@ -1,2 +1,8 @@
 @import "_base.css";
+
 @import "_Home.css";
+
+@import "_ChatPage.css";
+@import "_ChatBody.css";
+@import "_ChatBar.css";
+@import "_ChatFooter.css";
