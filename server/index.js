@@ -7,19 +7,21 @@ const app = express();
 const PORT = 4000;
 
 const http = createServer(app);
-const socket = new Server(http, { cors: { origin: "http://localhost:3000" } });
+const io = new Server(http, { cors: { origin: "http://localhost:3000" } });
 
 app.use(cors());
 
-socket.on("connection", (socket) => {
+io.on("connection", (socket) => {
   console.log(`+: ${socket.id} user just connected!`);
 
   socket.on("message", (data) => {
     console.log(data);
+    io.emit("messageResponse", data);
   });
 
   socket.on("disconnect", () => {
     console.log(`-: A user disconnected`);
+    socket.disconnect();
   });
 });
 
