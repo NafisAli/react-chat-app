@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "jtjoo.classic-asp-html",
+    "EditorConfig.EditorConfig",
+    "vincaslt.highlight-matching-tag",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode"
+  ]
+}
