@@ -1,14 +1,13 @@
-import { Socket } from "engine.io-client";
-import React from "react";
+import React, { useState } from "react";
 
-const ChatFooter = () => {
-  const { message, setMessage } = useState("");
+const ChatFooter = ({ socket }) => {
+  const [ message, setMessage ] = useState("");
 
   const handleSetMessage = (event) => {
     event.preventDefault();
 
     if (message.trim() && localStorage.getItem("userName")) {
-      Socket.emit("message", {
+      socket.emit("message", {
         text: message,
         name: localStorage.getItem("userName"),
         id: `${socket.id}${Math.random()}`,
